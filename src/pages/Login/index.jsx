@@ -1,24 +1,20 @@
 import { useContext, useState } from "react";
 import { AuthGoogleContext } from "../../contexts/authGoogle";
+import { Navigate } from "react-router-dom";
 
 
 export function Login() {
-  const { signInGoogle, user } = useContext(AuthGoogleContext)
+  const { signed, signInGoogle } = useContext(AuthGoogleContext)
   
-
-  return (
-    <div>
-      <b>Login</b>
-      <button onClick={() => signInGoogle()}>Logar</button>
+  if (!signed) {
+    return (
       <div>
-        {user && (
-          <>
-          <b>{user.displayName}</b>
-          <p>{user.email}</p>
-          <img src={user.photoURL} alt="" />
-          </>
-        )}
+        <b>Login</b>
+        <button onClick={() => signInGoogle()}>Logar</button>
       </div>
-    </div>
-  )
+    )
+  }
+
+  return <Navigate to="/" />
+ 
 }
