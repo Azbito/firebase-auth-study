@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthGoogleContext } from "../../contexts/authGoogle";
 import { Navigate } from "react-router-dom";
+import React from 'react'
 
 
 export function Login() {
-  const { signed, signInGoogle } = useContext(AuthGoogleContext)
+  const { isSigned, signInGoogle } = useContext(AuthGoogleContext)
   
-  if (!signed) {
+  if (!isSigned) {
     return (
       <div>
         <b>Login</b>

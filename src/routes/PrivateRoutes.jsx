@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { AuthGoogleContext } from "../contexts/authGoogle";
 import { Navigate, Outlet } from "react-router-dom";
+import React from 'react'
 
 export function PrivateRoutes() {
-  const { signed } = useContext(AuthGoogleContext)
+  const { isSigned } = useContext(AuthGoogleContext)
 
-  return signed ? <Outlet /> : <Navigate to="/login" />
+  return isSigned ? <Outlet /> : <Navigate to="/login" />
 }

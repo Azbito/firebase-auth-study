@@ -1,0 +1,80 @@
+.container-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: rgb(140, 0, 255);
+  
+  a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+
+    &:visited {
+      color: white
+    }
+  }
+
+ .profile-container {
+  position: relative;
+  
+  img {
+    margin-top: .4rem;
+    width: 2rem;
+    border-radius: 999px;
+    position: relative;
+  }
+
+  .options {
+    background-color: rgb(140, 36, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    width: 10rem;
+    border-radius: 8px;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.445);
+
+    animation: FadeInUpToDown 1s forwards;
+    
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      gap: .5rem;
+      transition: .2s;
+      width: 100%;
+
+      .icon {
+        width: 1.5rem;
+        color: white;
+      }
+
+      p {
+        color: white;  
+      }
+
+      &:hover {
+      cursor: pointer;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.116);
+    }
+  }
+  }
+ }
+}
+
+@keyframes FadeInUpToDown {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1
+  }
+}

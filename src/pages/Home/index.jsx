@@ -1,20 +1,18 @@
 import { useContext } from "react"
 import { AuthGoogleContext } from "../../contexts/authGoogle"
+import React from 'react'
+import { User } from "../../components/User"
+import './style.scss'
+import { Button } from "../../components/Button"
 
 export function Home() {
-  const { user, signOutGoogle } = useContext(AuthGoogleContext)
-
-  const userInfo = user || null;
+  const { signOutGoogle } = useContext(AuthGoogleContext)
 
   return (
-    <>
+    <div className="home-container">
     <b>Home</b>
-    <div>
-      <img src={userInfo?.photoURL} alt="Profile picture" />
-      <p>{userInfo.displayName}</p>
-      <p>{userInfo.email}</p>
-      <button onClick={() => signOutGoogle()}>Logout</button>
+      <User />
+      <Button onClick={() => signOutGoogle()} title="Sign out" />
     </div>
-    </>
   )
 }

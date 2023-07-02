@@ -3,10 +3,10 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { Fragment } from "react";
+import React from 'react'
 
 export default function AppRoutes() {
   return (
-    <BrowserRouter>
     <Fragment>
       <Routes>
         <Route path="/" element={<PrivateRoutes />}> 
@@ -15,6 +15,5 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </Fragment>
-    </BrowserRouter>
   )
 }

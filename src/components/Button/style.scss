@@ -1,0 +1,17 @@
+button {
+  border: none;
+  outline: none;
+  background-color: rgb(145, 255, 0);
+  padding: .5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    background-color: rgb(131, 216, 19);
+  }
+
+  &:active {
+    background-color: rgb(113, 187, 17);
+  }
+}
