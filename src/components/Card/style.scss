@@ -33,6 +33,8 @@
 }
 
 .right {
+  flex-direction: row-reverse;
+  text-align: right;
   animation: FadingInRightToLeft 1s forwards;
 }
 
