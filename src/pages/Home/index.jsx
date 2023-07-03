@@ -1,18 +1,20 @@
-import { useContext } from "react"
-import { AuthGoogleContext } from "../../contexts/authGoogle"
 import React from 'react'
 import { User } from "../../components/User"
 import './style.scss'
-import { Button } from "../../components/Button"
+import { Services } from "../../components/Services"
 
 export function Home() {
-  const { signOutGoogle } = useContext(AuthGoogleContext)
+
 
   return (
     <div className="home-container">
-    <b>Home</b>
+    <div className="banner">
       <User />
-      <Button onClick={() => signOutGoogle()} title="Sign out" />
+    </div>
+      <Services />
+      <br />
+      <br />
+      <br />
     </div>
   )
 }

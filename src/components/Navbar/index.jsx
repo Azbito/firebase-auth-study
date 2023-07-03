@@ -6,7 +6,7 @@ import './style.scss'
 import { useClickOutside } from "../../hooks/useClickOutside";
 
 export function Navbar() {
-  const { user } = useContext(AuthGoogleContext)
+  const { localStorageUser, signOutGoogle } = useContext(AuthGoogleContext)
   const [isSettings, setIsSettings] = useState(false)
   const infosRef = useRef(null);
 
@@ -19,7 +19,7 @@ export function Navbar() {
       </NavLink>
       <div>
       <div ref={infosRef} className="profile-container">
-        <img src={user?.photoURL} alt="Profile picture" onClick={() => setIsSettings(!isSettings)} />
+        <img src={localStorageUser?.photoURL} alt="Profile picture" onClick={() => setIsSettings(!isSettings)} />
         {isSettings && (
           <div className="options">
             <div className="option">
@@ -30,7 +30,7 @@ export function Navbar() {
               <GearSix className="icon" size={32} />
               <p>Settings</p>
             </div>
-            <div className="option">
+            <div className="option" onClick={signOutGoogle}>
               <SignOut className="icon" size={32} />
               <p>Sign Out</p>
             </div>

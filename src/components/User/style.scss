@@ -1,25 +1,27 @@
 .user-container {
-  background-color: rgb(111, 44, 236);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.459);
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 2rem 4rem;
-  width: 10rem;
+  width: 30rem;
   border-radius: 10px;
   animation: FadeInBottomToUp 1s forwards;
   
   img {
     border-radius: 999px;
+    padding-bottom: 1rem;
+  }
+
+  .glad {
+    font-size: 2.5rem
   }
 
   b {
-    font-size: 1.2rem;
-  }
-
-  p {
-    font-style: italic;
+    font-size: 3rem;
   }
 }
 

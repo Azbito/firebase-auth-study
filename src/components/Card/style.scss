@@ -1,0 +1,59 @@
+.card-container {
+  background-color: rgb(120, 23, 231);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  border-radius: 16px;
+  padding: 1rem 0;  
+  transition: .2s;
+  cursor: pointer;
+
+  .info-container {
+    flex-direction: column;
+    width: 50%;
+
+    b {
+      font-size: 1.5rem
+    }
+  }
+
+  &:hover {
+    background-color: rgb(89, 12, 177);
+  }
+
+  &:active {
+    background-color: rgb(121, 33, 223);
+  }
+}
+
+.left {
+  animation: FadingInLeftToRight 1s forwards;
+}
+
+.right {
+  animation: FadingInRightToLeft 1s forwards;
+}
+
+@keyframes FadingInLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes FadingInRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
